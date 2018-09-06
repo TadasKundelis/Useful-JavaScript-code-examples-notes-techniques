@@ -11,10 +11,11 @@ const Animal = function (name) {
 }
 
 const animal = Animal('Charlie');
-
 animal.sayName(); // Hi, my name is Fluffy!
 
-//Mixins
+
+
+/*** Mixins ***/
 const canFly = {
     fly() {
         console.log('I am flying!')
@@ -39,6 +40,8 @@ const canMeow = {
     }
 }
 
+
+//single bird
 const bird = Object.assign({}, Animal('Pigeon'), canFly);
 bird.sayName(); // Hi, my name is Pigeon!
 bird.fly(); // I am flying!
