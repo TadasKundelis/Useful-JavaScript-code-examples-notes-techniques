@@ -13,8 +13,6 @@ const Animal = function (name) {
 const animal = Animal('Charlie');
 animal.sayName(); // Hi, my name is Fluffy!
 
-
-
 /*** Mixins ***/
 const canFly = {
     fly() {
