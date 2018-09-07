@@ -44,7 +44,7 @@ const bird = Object.assign({}, Animal('Pigeon'), canFly);
 bird.sayName(); // Hi, my name is Pigeon!
 bird.fly(); // I am flying!
 
-//bird factory:
+//bird factory
 const Bird = function (name) {
     const bird = Object.assign({}, Animal(name), canFly);
     return bird;
