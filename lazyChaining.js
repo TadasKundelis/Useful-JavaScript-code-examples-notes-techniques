@@ -20,7 +20,7 @@ LazyChain.prototype.force = function() {
 
 //some sample functions
 function add5(args){
-	return args.map(x => x + 5);
+    return args.map(x => x + 5);
 }
 
 function multiplyBy3(args) {
