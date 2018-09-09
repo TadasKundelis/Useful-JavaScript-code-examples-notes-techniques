@@ -24,7 +24,7 @@ function add5(args){
 }
 
 function multiplyBy3(args) {
-	return args.map(x => x * 3)
+    return args.map(x => x * 3);
 }
 
 function subtract(args, num) {
