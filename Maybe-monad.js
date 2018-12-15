@@ -40,14 +40,12 @@ const users = [{
 ]
 
 
-users.forEach(getUserLanguage);
+users.forEach(console.log(getUserLanguage)); //French/ German, English, English
 
 function getUserLanguage(user) {
-    let language = Maybe.of(user)
+    return Maybe.of(user)
         .map(user => user.language)
         .getOrElse("English")
-
-    console.log(language)
 }
 
 
@@ -61,6 +59,6 @@ function getUserLanguage(user) {
     } else {
         language = "English";
     }
-    console.log(language)
+    return language;
 }
 */
