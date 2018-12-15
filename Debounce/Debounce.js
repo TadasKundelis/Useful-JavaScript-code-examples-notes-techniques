@@ -3,26 +3,26 @@
 // N milliseconds. If `immediate` is passed, trigger the function on the
 // leading edge, instead of the trailing.
 function debounce(func, wait, immediate) {
-	let timeout;
-	return function(...args) {
-		const context = this;
-		const later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		const callNow = immediate && !timeout;
-		clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-		if (callNow) {
-            func.apply(context, args);
-        }
-	};
+  let timeout;
+  return function(...args) {
+    const context = this;
+    const later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) {
+      func.apply(context, args);
+    }
+  };
 };
 
 const searchBox = document.getElementById("search-box");
 
-const callback = debounce(function(){
-    document.getElementById("result").innerHTML = this.value;
+const callback = debounce(function() {
+  document.getElementById("result").innerHTML = this.value;
 }, 500, true)
 
 searchBox.addEventListener("keyup", callback);
