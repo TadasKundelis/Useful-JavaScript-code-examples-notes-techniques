@@ -11,6 +11,7 @@ const trampoline = fn => {
   return (...args) => {
     let result = fn(...args);
     while(typeof result === 'function') {
+      //there is only one fn function execution on the stack, because we always return anonymous function that will be called in the next iteration
       result = result();
     }
     return result;
