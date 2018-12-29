@@ -42,7 +42,7 @@ printInUpperCase("string") //STRING
 printInUpperCase(14) //val.toUpperCase is not a function
 
 
-//Different ways pf handling asynchronous actions
+//*************** Different ways of handling asynchronous actions *******************//
 function startWithDelay(timeout, name) {
   console.log(`started ${name} `);
   return new Promise(function(resolve, reject) {
