@@ -8,7 +8,6 @@ async function getDataFromPromise() {
   console.log(result); //after 1s 'result from promise' is printed
 }
 
-
 //get data from APi
 async function getDataFromApi(url) {
   let response = await fetch(url);
@@ -22,7 +21,6 @@ async function getDataFromApi(url) {
 
 getDataFromApi("https://jsonplaceholder.typicode.com/todos/1")
   .catch(console.log) 
-
 
 //error handling with try catch
 function caserUpper(val) {
@@ -45,7 +43,6 @@ printInUpperCase(14) //val.toUpperCase is not a function
 
 
 //Different ways pf handling asynchronous actions
-
 function startWithDelay(timeout, name) {
   console.log(`started ${name} `);
   return new Promise(function(resolve, reject) {
