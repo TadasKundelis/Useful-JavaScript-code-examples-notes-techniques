@@ -8,7 +8,7 @@ LazyChain.prototype.invoke = function(fn, args) {
     this.functions.push(function(input){
         return fn.call(this, input, args);
     })
-return this;
+    return this;
 }
 
 //execute registered functions

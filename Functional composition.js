@@ -4,7 +4,7 @@ const divideBy4 = (x) => x/4
 
 const compose = (...fns) => {
   return function(target){
-      return fns.reduce((value, fn) => fn(value), target)
+    return fns.reduce((value, fn) => fn(value), target)
   }
 }
 
