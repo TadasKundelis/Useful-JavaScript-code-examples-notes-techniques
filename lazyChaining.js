@@ -13,13 +13,13 @@ LazyChain.prototype.invoke = function(fn, args) {
 
 //execute registered functions
 LazyChain.prototype.force = function() {
-    return this.functions.reduce(function(input, fn){
+    return this.functions.reduce(function(input, fn) {
         return fn(input);
     }, this.target)
 };
 
 //some sample functions
-function add5(args){
+function add5(args) {
     return args.map(x => x + 5);
 }
 
