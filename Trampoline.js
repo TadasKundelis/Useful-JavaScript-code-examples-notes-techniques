@@ -1,16 +1,15 @@
-
 //function adding all numbers below given number
 let add = (num, acc = 0) => {
   return num ? add(num - 1, acc + num) : acc
 }
-  
+
 console.log(add(10000)) //RangeError: Maximum call stack size exceeded
-  
+
 //let's create a trampoline function to avoid RangeError
 const trampoline = fn => {
   return (...args) => {
     let result = fn(...args);
-    while(typeof result === 'function') {
+    while (typeof result === 'function') {
       //there is only one fn function execution on the stack, because we always return anonymous function that will be called in the next iteration
       result = result();
     }
@@ -24,9 +23,5 @@ add = (num, acc = 0) => {
 }
 
 const sumBelowNumber = trampoline(add);
-const result = sumBelowNumber(10000); 
+const result = sumBelowNumber(10000);
 console.log(result); //50005000
-   
-    
-  
-  

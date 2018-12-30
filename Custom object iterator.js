@@ -14,9 +14,19 @@ const data = {
         const prop = props[index];
         const value = values[index];
         if (index === numOfProps) {
-          return {value: {[prop]: value}, done: true}
+          return {
+            value: {
+              [prop]: value
+            },
+            done: true
+          }
         } else {
-          return {value: {[prop]: value}, done: false}
+          return {
+            value: {
+              [prop]: value
+            },
+            done: false
+          }
         }
       }
     }
@@ -24,6 +34,6 @@ const data = {
   }
 }
 
-for(let item of data) {
+for (let item of data) {
   console.log(item) // { name: 'John' }, { age: 20 }, { nationality: 'English' }, { sex: 'male' }
 }

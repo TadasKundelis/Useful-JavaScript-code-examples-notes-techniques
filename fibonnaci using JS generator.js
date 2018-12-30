@@ -1,6 +1,7 @@
-function* fib(){
-  let current = 0, next = 1;
-  while(true) {
+function* fib() {
+  let current = 0,
+    next = 1;
+  while (true) {
     yield current;
     [current, next] = [next, current + next];
   }

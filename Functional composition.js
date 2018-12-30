@@ -1,9 +1,9 @@
 const add5 = (x) => x + 5
 const square = (x) => x * x
-const divideBy4 = (x) => x/4
+const divideBy4 = (x) => x / 4
 
 const compose = (...fns) => {
-  return function(target){
+  return function (target) {
     return fns.reduce((value, fn) => fn(value), target)
   }
 }
@@ -18,11 +18,11 @@ const labelLog = (label) => console.log.bind(console, label);
 const trace = compose(labelLog, tap);
 
 const compute = compose(
-  add5, 
-  trace('add5 -> '), 
-  square, 
-  trace('square -> '), 
-  divideBy4, 
+  add5,
+  trace('add5 -> '),
+  square,
+  trace('square -> '),
+  divideBy4,
   trace('divideBy4 -> ')
 );
 

@@ -11,7 +11,7 @@ async function getDataFromPromise() {
 //get data from APi
 async function getDataFromApi(url) {
   let response = await fetch(url);
-  if(response.status === 200) {
+  if (response.status === 200) {
     let result = await response.json()
     return result;
   } else {
@@ -20,7 +20,7 @@ async function getDataFromApi(url) {
 }
 
 getDataFromApi("https://jsonplaceholder.typicode.com/todos/1")
-  .catch(console.log) 
+  .catch(console.log)
 
 //error handling with try catch
 function caserUpper(val) {
@@ -33,7 +33,7 @@ async function printInUpperCase(x) {
   try {
     const msg = await caserUpper(x);
     console.log(msg);
-  } catch(err) {
+  } catch (err) {
     console.log(err.message);
   }
 }
@@ -45,8 +45,8 @@ printInUpperCase(14) //val.toUpperCase is not a function
 //*************** Different ways of handling asynchronous actions *******************//
 function startWithDelay(timeout, name) {
   console.log(`started ${name} `);
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
       resolve(`${name} resolved after ${timeout}s`)
     }, 1000 * timeout)
   })
@@ -70,7 +70,7 @@ function parralel() {
   startWithDelay(3, 'parralel2').then(value => console.log(value)) //resolved after 3s
 }
 
-concurrent(); 
+concurrent();
 sequential();
 parralel();
 
@@ -90,5 +90,3 @@ parralel2 resolved after 3s
 sequential1 resolved after 2s
 sequential2 resolved after 3s
 */
-
-

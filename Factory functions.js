@@ -2,12 +2,12 @@
 
 //basic Animal object factory
 const Animal = function (name) {
-    const animal = {};
-    animal.name = name;
-    animal.sayName = function () {
-        console.log(`Hi, my name is ${animal.name}!`);
-    }
-    return animal;
+  const animal = {};
+  animal.name = name;
+  animal.sayName = function () {
+    console.log(`Hi, my name is ${animal.name}!`);
+  }
+  return animal;
 }
 
 const animal = Animal('Charlie');
@@ -15,27 +15,27 @@ animal.sayName(); // Hi, my name is Fluffy!
 
 /*** Mixins ***/
 const canFly = {
-    fly() {
-        console.log('I am flying!')
-    }
+  fly() {
+    console.log('I am flying!')
+  }
 }
 
 const runFast = {
-    runFast() {
-        console.log('I run very fast!')
-    }
+  runFast() {
+    console.log('I run very fast!')
+  }
 }
 
 const canKill = {
-    kill() {
-        console.log('I will kill you!');
-    }
+  kill() {
+    console.log('I will kill you!');
+  }
 }
 
 const canMeow = {
-    meow() {
-        console.log('Meowwwwwwwww');
-    }
+  meow() {
+    console.log('Meowwwwwwwww');
+  }
 }
 
 
@@ -46,26 +46,26 @@ bird.fly(); // I am flying!
 
 //bird factory
 const Bird = function (name) {
-    const bird = Object.assign({}, Animal(name), canFly);
-    return bird;
+  const bird = Object.assign({}, Animal(name), canFly);
+  return bird;
 }
 
 //cat factory
 const Cat = function (name) {
-    const cat = Object.assign({}, Animal(name), canMeow);
-    return cat;
+  const cat = Object.assign({}, Animal(name), canMeow);
+  return cat;
 }
 
 //killing bird factory
 const KillingBird = function (name) {
-    const killingBird = Object.assign({}, Bird(name), canKill);
-    return killingBird;
+  const killingBird = Object.assign({}, Bird(name), canKill);
+  return killingBird;
 }
 
 //fast cat factory
 const FastCat = function (name) {
-    const fastCat = Object.assign({}, Cat(name), runFast);
-    return fastCat
+  const fastCat = Object.assign({}, Cat(name), runFast);
+  return fastCat
 }
 
 const sparrow = Bird('Sparrow');
