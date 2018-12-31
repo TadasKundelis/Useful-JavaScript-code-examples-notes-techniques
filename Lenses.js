@@ -6,15 +6,21 @@ const clone = (obj) =>
   }, {})
 
 const getProp = (obj, prop) => obj[prop]
+
 const setProp = (key, value) => obj => obj[key] = value
+
 //find inner object whose prop you wish to modify
 const findTarget = lens => obj => lens.reduce(getProp, obj)
+
 //curried function that runs a number of functions on the target object
 const compose = (...fns) => target => fns.reduceRight((value, fn) => fn(value), target)
+
 //fn(target) = compose(...fns)(target)
 const updateObjectProperty = (fn, target) => (fn(target), target)
-//check certain property of a nested object
+
+//check certain property of a nested object;
 const view = (lens, obj) => findTarget(lens)(obj)
+
 //set property on a deep copy of the original nested object and return it; the original object is not mutated
 const createUpdatedObject = (lens, prop, newValue, obj) =>
   updateObjectProperty(
@@ -24,6 +30,7 @@ const createUpdatedObject = (lens, prop, newValue, obj) =>
     ),
     clone(obj)
   )
+
 //example object
 const obj = {
   a: {
