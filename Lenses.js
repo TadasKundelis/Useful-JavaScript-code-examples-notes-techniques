@@ -15,8 +15,8 @@ const findTarget = lens => obj => lens.reduce(getProp, obj)
 //curried function that runs a number of functions on the target object
 const compose = (...fns) => target => fns.reduceRight((value, fn) => fn(value), target)
 
-//fn(target) = compose(...fns)(target)
-const updateObjectProperty = (fn, target) => (fn(target), target)
+//update(obj) = compose(...fns)(target)
+const updateObjectProperty = (update, obj) => (update(obj), obj)
 
 //check certain property of a nested object;
 const view = (lens, obj) => findTarget(lens)(obj)
