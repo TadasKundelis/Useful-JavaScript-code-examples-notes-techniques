@@ -1,4 +1,3 @@
-
 // Structural types with the same properties are interchangeable
 interface Person {
     name: string
