@@ -16,7 +16,6 @@ function sayHello(person: Person): string {
 const employee: Employee = { name: "John", age: 35 }
 sayHello(employee) // accepts object with the same properties
 
-
 class Vehicle { }
 class Car extends Vehicle { }
 class Bus extends Vehicle { }
